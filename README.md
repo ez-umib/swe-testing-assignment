@@ -66,5 +66,3 @@ Output & Reporting	Colorful, clear, detailed reports	Basic output
 Choice Justification:
 We chose Pytest because it allows simpler test writing, better fixtures for setup, parametrized tests, and clear test reports. It is ideal for both unit and integration testing, and keeps test code concise and readable.
 
-
-
