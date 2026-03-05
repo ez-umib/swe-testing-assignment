@@ -1,4 +1,4 @@
-from app.calculator import Calculator
+from app.calculator import calculator
 
 def test_full_addition_flow():
     calc = Calculator()
