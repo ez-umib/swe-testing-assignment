@@ -1,73 +1,58 @@
 swe-testing-assignment
+Project Description
 
-swe-testing-assignment is a simple calculator project built with Python. It includes a Calculator class for basic math operations, automated tests with pytest, and a graphical user interface (GUI) using Tkinter.
+swe-testing-assignment is a simple calculator application implemented in Python. It provides basic arithmetic operations: addition, subtraction, multiplication, division, and a clear (C) function to reset the input.
 
-Features
+The project demonstrates professional software testing practices and version control using Git and GitHub, with both unit and integration tests to ensure reliability and correctness.
 
-Basic operations: add, subtract, multiply, divide
+Setup Instructions
 
-Handles errors like division by zero
+Clone the repository:
 
-clear() function to reset the current result
-
-Simple and intuitive GUI with numeric and operation buttons
-
-Automated tests to ensure correct functionality
-
-Installation
-
-Make sure you have Python ≥ 3.7 installed.
-
-Clone the project:
-
-git clone <repository-url>
-
-Navigate to the project folder:
-
+git clone https://github.com/ez-umib/swe-testing-assignment.git
 cd swe-testing-assignment
 
-Install pytest (if not already installed):
+Create a virtual environment (optional but recommended):
 
-pip install pytest
-Running the Calculator
-GUI Version
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+(Currently only pytest is required for testing.)
+
+How to Run the Application
 python3 -m app.gui
 
-Opens the calculator window.
+A GUI window will appear with the calculator.
 
-Use the buttons for numbers and operations.
+Enter numbers, select operations, and press = to calculate.
 
-C clears the display, = calculates the result.
+Press C to clear the display.
 
-Python Usage (CLI)
-from app.calculator import Calculator
-
-calc = Calculator()
-
-print(calc.add(5,3))        # 8
-print(calc.subtract(10,4))  # 6
-print(calc.multiply(6,7))   # 42
-print(calc.divide(8,2))     # 4
-Running Tests
-
-Run all tests with:
-
+How to Run Tests
 pytest
 
-Tests cover:
+This command runs all unit and integration tests in the tests folder.
 
-Adding positive and negative numbers
+You should see output showing all tests passed:
 
-Division with decimal numbers
+collected 10 items
+tests/test_calculator.py ..........
+10 passed
+Testing Framework Research: Pytest vs Unittest
 
-ValueError when dividing by zero
+Pytest and Unittest are two popular testing frameworks for Python:
 
-Operations with very large numbers
+Feature	Pytest	Unittest
+Ease of Use	Simple syntax, less boilerplate	Requires classes and methods
+Fixtures / Setup	Powerful @pytest.fixture support	setUp and tearDown methods
+Parametrized Tests	Easy to parametrize tests	Requires additional code
+Plugins / Extensions	Many community plugins available	Limited plugins
+Output & Reporting	Colorful, clear, detailed reports	Basic output
 
-Notes
+Choice Justification:
+We chose Pytest for this project because it allows simpler test writing, better fixtures for setup, parametrized tests, and clear test reports. It is ideal for both unit and integration testing, and it keeps test code concise and readable.
 
-The divide function raises a ValueError if attempting to divide by zero.
-
-The GUI uses eval() for quick calculations, so avoid unsafe external inputs.
-
-clear() only resets the current result; it does not delete the Calculator object.
